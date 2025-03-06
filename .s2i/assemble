@@ -1,0 +1,9 @@
+#!/bin/bash
+# 设置 SERVER_PORT 环境变量
+export SERVER_PORT=8081
+
+echo "==== 开始 shipper-backend S2I 构建 ===="
+# 编译 Go 程序（假设源码根目录在 $SOURCE_DIR 下）
+cd "${SRC_DIR:-.}"
+go build -o shipper-backend .
+echo "构建完成，生成二进制文件 shipper-backend"
